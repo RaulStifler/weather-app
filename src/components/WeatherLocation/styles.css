@@ -1,0 +1,21 @@
+.location-container {
+    width: 100%;
+    height: 35px;
+    text-align: left;
+    color: #888;
+    line-height: 35px;
+}
+
+.location-container h1 {
+    margin: 0;
+    white-space: nowrap;
+}
+
+.weather-location-container {
+    box-sizing: border-box;
+    margin: .5rem;
+    width: calc(100% - 20px);
+    min-width: 350px;
+    padding: 25px;
+    box-shadow: 10px 10px 40px -12px rgba(0, 0, 0, .75);
+}

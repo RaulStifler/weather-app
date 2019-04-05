@@ -1,25 +1,35 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
+import AppBar from '@material-ui/core/AppBar';
+import { Toolbar, Typography } from '@material-ui/core';
 import './App.css';
+import LocationListContainer from './containers/LocationListContainer';
+import ForecastExtendedContainer from './containers/ForecastExtendedContainer';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Grid>
+          <AppBar position="sticky">
+            <Toolbar>
+              <Typography component="h1" variant="h3" color="inherit">
+                Weather App
+              </Typography>
+            </Toolbar>
+          </AppBar>
+        </Grid>
+        <Grid container>
+          <Grid item xs={12} md={5}>
+            <LocationListContainer />
+          </Grid>
+          <Grid item xs={12} md={7}>
+            <Paper>
+              <ForecastExtendedContainer />
+            </Paper>
+          </Grid>
+        </Grid>
       </div>
     );
   }
