@@ -1,6 +1,6 @@
-import { SET_CITIES, CLEAR_CITIES } from '../actions';
+import { SET_CITIES, CLEAR_CITIES, SET_FORECAST_DATA } from '../actions';
 
-const citiesReducer = (state=[
+export const citiesReducer = (state=[
     'Guadalajara, mx',
     'Paris, fr',
     'Tokyo, jp',
@@ -17,4 +17,13 @@ const citiesReducer = (state=[
             return state;
     }
 }
-export default citiesReducer;
+
+export const cities = (state = {}, action) => {
+    switch (action.type) {
+        case SET_FORECAST_DATA:
+            const { city, forecastData } = action.city;
+            return {...state, [city]: {forecastData}};
+        default:
+            return state;
+    }
+}

@@ -1,8 +1,9 @@
 import { combineReducers } from 'redux';
 import { cityReducer } from './cityReducer';
-import citiesReducer from './citiesReducer';
+import { citiesReducer, cities } from './citiesReducer';
 
 export const mainReducer = combineReducers({
     city: cityReducer,
     cities: citiesReducer,
+    citiesForecast: cities,
 })

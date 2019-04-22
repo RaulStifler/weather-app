@@ -4,10 +4,10 @@ import WeatherLocation from '../WeatherLocation';
 
 const LocationList = ({
   cities,
-  setCity
+  setSelectedCity
 }) => {
   const selectLocation = city => {
-    setCity(city);
+    setSelectedCity(city);
   }
   return (
     <div>
@@ -25,7 +25,7 @@ const LocationList = ({
 
 LocationList.protoTypes = {
   cities: PropTypes.array.isRequired,
-  setCity: PropTypes.func.isRequired,
+  setSelectedCity: PropTypes.func.isRequired,
 }
 
 export default LocationList;
