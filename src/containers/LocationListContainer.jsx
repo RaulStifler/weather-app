@@ -1,26 +1,32 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { setSelectedCity } from '../actions'
+import { setSelectedCity, setWeather } from '../actions'
 import LocationList from '../components/LocationList';
 
 class LocationListContainer extends Component {
+  componentDidMount() {
+    this.props.setWeather(this.props.citiesList);
+  }
+  
   render() {
-    const { cities, setSelectedCity } = this.props;
+    const { citiesList, setSelectedCity } = this.props;
     return (
-      <LocationList cities={cities} setSelectedCity={setSelectedCity} />
+      <LocationList cities={citiesList} setSelectedCity={setSelectedCity} />
     );
   }
 }
 
 
 const mapStateToProps = ({
-  cities
+  citiesList,
+  cities,
 }) => ({
-  cities
+  citiesList
 });
 
 const mapDispatchToProps = {
   setSelectedCity,
+  setWeather,
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(LocationListContainer);

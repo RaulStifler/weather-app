@@ -4,7 +4,8 @@ import WeatherLocation from '../WeatherLocation';
 
 const LocationList = ({
   cities,
-  setSelectedCity
+  setSelectedCity,
+  data
 }) => {
   const selectLocation = city => {
     setSelectedCity(city);
@@ -14,9 +15,10 @@ const LocationList = ({
       {
         cities.map(city =>
           <WeatherLocation 
-            key={city}
-            city={city} 
-            selectLocation={()=>selectLocation(city)} />
+            key={city.key}
+            city={city.name} 
+            selectLocation={()=>selectLocation(city.name)}
+            data={city.data} />
         )
       }
     </div>

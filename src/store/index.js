@@ -4,7 +4,7 @@ import { mainReducer } from '../reducers'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const store = createStore(mainReducer, {city: 'Selecciona una ciudad',},composeEnhancers(
+const store = createStore(mainReducer, {city: 'Selecciona una ciudad'},composeEnhancers(
     applyMiddleware(thunk)
 ));
 

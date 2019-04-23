@@ -5,17 +5,21 @@ import { clearCity } from '../actions'
 
 class ForecastExtendedContainer extends Component {
   render() {
-    const { city, clearCity } = this.props;
+    const { city, clearCity, forecastData } = this.props;
     return (
       <div>
-        <ForecastExtended city={city} clearCity={clearCity}/>     
+        <ForecastExtended city={city} clearCity={clearCity} forecastData={forecastData} />     
       </div>
     );
   }
 }
 
-const mapStateToProps = state =>({
-  city: state.city,
+const mapStateToProps = ({
+  city,
+  cities,
+}) =>({
+  city,
+  forecastData: cities[city] && cities[city].forecastData,
 })
 
 const mapDispatchToProps = {
