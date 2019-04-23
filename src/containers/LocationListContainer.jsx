@@ -9,9 +9,9 @@ class LocationListContainer extends Component {
   }
   
   render() {
-    const { citiesList, setSelectedCity } = this.props;
+    const { citiesList, cities, setSelectedCity } = this.props;
     return (
-      <LocationList cities={citiesList} setSelectedCity={setSelectedCity} />
+      <LocationList citiesList={citiesList} cities={cities} setSelectedCity={setSelectedCity} />
     );
   }
 }
@@ -21,7 +21,8 @@ const mapStateToProps = ({
   citiesList,
   cities,
 }) => ({
-  citiesList
+  citiesList,
+  cities,
 });
 
 const mapDispatchToProps = {

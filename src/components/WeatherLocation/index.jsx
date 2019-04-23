@@ -22,13 +22,14 @@ import './styles.css';
 
 const WeatherLocation = ({
   weather,
+  data,
   city,
   selectLocation
 }) => (
   <div className="weather-location-container" onClick={selectLocation}>
     <Location locationName={city} />
-    { weather ?
-      <WeatherData data={weather} /> :
+    { data ?
+      <WeatherData data={data} /> :
       <CircularProgress />
     }
   </div>

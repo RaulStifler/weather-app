@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import WeatherLocation from '../WeatherLocation';
 
 const LocationList = ({
-  cities,
+  citiesList,
   setSelectedCity,
-  data
+  cities
 }) => {
   const selectLocation = city => {
     setSelectedCity(city);
@@ -13,12 +13,12 @@ const LocationList = ({
   return (
     <div>
       {
-        cities.map(city =>
+        citiesList.map(city =>
           <WeatherLocation 
             key={city.key}
             city={city.name} 
             selectLocation={()=>selectLocation(city.name)}
-            data={city.data} />
+            data={cities[city.name] ? cities[city.name].weather:null} />
         )
       }
     </div>
